@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#145b58">
+  <meta name="description" content="Submit and track local community suggestions.">
+
+  <title>Digital Suggestion Box</title>
+
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+  <link rel="icon" href="{{ url_for('static', filename='app-icon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="top">
+
+    <a class="brand" href="#" data-view="home">
+      <span class="logo">📮</span>
+
+      <span>
+        Digital Suggestion Box
+        <small>Community voice · Better neighbourhoods</small>
+      </span>
+    </a>
+
+    <nav id="nav">
+
+      <button class="navlink" data-view="submit">
+        Submit suggestion
+      </button>
+
+      <button class="navlink" data-view="track">
+        Track suggestion
+      </button>
+
+      <button class="navlink" data-view="login">
+        Citizen login
+      </button>
+
+      <button class="navlink" data-view="admin-login">
+        Admin
+      </button>
+
+      <label class="theme-picker" for="themeSelect">
+        Theme
+
+        <select id="themeSelect">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="ocean">Ocean</option>
+          <option value="sunset">Sunset</option>
+          <option value="forest">Forest</option>
+        </select>
+      </label>
+
+    </nav>
+  </header>
+
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+      <div class="hero-copy">
+
+        <span class="eyebrow">
+          YOUR VOICE CAN MAKE A DIFFERENCE
+        </span>
+
+        <h1>
+          Small ideas.<br>
+          <em>Better communities.</em>
+        </h1>
+
+        <p>
+          Share local issues and suggestions, follow their progress,
+          and help make your neighbourhood a better place for everyone.
+        </p>
+
+        <div class="actions">
+
+          <button class="primary" data-view="submit">
+            Share a suggestion →
+          </button>
+
+          <button class="secondary" data-view="track">
+            Track a suggestion
+          </button>
+
+        </div>
+
+        <div class="trust">
+          <span>✓ Easy to submit</span>
+          <span>✓ Track progress</span>
+          <span>✓ Community-first</span>
+        </div>
+
+      </div>
+
+
+      <!-- Illustration -->
+      <div class="hero-art" aria-hidden="true">
+
+        <div class="sun"></div>
+
+        <div class="art-card">
+
+          <div class="art-icon">💡</div>
+
+          <strong>Your idea matters</strong>
+
+          <p>
+            Every suggestion is a step toward a cleaner,
+            safer, better neighbourhood.
+          </p>
+
+          <div class="art-line"></div>
+          <div class="art-line short"></div>
+
+          <span class="art-check">✓</span>
+
+        </div>
+
+        <div class="art-leaf">✦</div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="feature-row">
+
+      <div>
+        <b>01</b>
+
+        <span>
+          <strong>Share an issue</strong>
+          <small>Tell us what needs improvement.</small>
+        </span>
+      </div>
+
+      <div>
+        <b>02</b>
+
+        <span>
+          <strong>Track progress</strong>
+          <small>Use your tracking ID for updates.</small>
+        </span>
+      </div>
+
+      <div>
+        <b>03</b>
+
+        <span>
+          <strong>See the change</strong>
+          <small>Follow the status through resolution.</small>
+        </span>
+      </div>
+
+    </section>
+
+
+    <!-- JavaScript dynamically loads forms and dashboards here -->
+    <section class="panel-wrap" id="panel" aria-live="polite"></section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    Digital Suggestion Box · Helping communities improve together
+  </footer>
+
+
+  <!-- Toast notifications -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+
+  <!-- JavaScript -->
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+
+</body>
+</html>
